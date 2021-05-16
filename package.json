@@ -1,5 +1,5 @@
 {
-  "name": "@action-badges/poetry",
+  "name": "@action-badges/poetry-badges",
   "description": "Poetry Action Badges",
   "version": "0.0.0",
   "private": true,
@@ -13,9 +13,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/action-badges/poetry.git"
+    "url": "git+https://github.com/action-badges/poetry-badges.git"
   },
-  "homepage": "https://github.com/action-badges/poetry",
+  "homepage": "https://github.com/action-badges/poetry-badges",
   "author": "chris48s",
   "license": "MIT",
   "dependencies": {
