@@ -1,0 +1,39 @@
+{
+  "name": "@action-badges/poetry",
+  "description": "Poetry Action Badges",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "ncc build src/action.js -o dist --minify",
+    "lint": "eslint \"src/**/*.js\"",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "prettier:check": "prettier --check \"src/**/*.js\"",
+    "test": "nyc --reporter=text mocha \"src/**/*.spec.js\"",
+    "coverage": "nyc report --reporter=cobertura"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/action-badges/poetry.git"
+  },
+  "homepage": "https://github.com/action-badges/poetry",
+  "author": "chris48s",
+  "license": "MIT",
+  "dependencies": {
+    "@action-badges/core": "^0.1.0",
+    "@actions/core": "^1.2.7",
+    "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.28.5",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-mocha": "^8.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.3.0"
+  },
+  "engines": {
+    "node": ">= 12"
+  }
+}

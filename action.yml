@@ -1,0 +1,18 @@
+name: 'Poetry Action Badges'
+description: 'Poetry Action Badges'
+branding:
+  icon: 'info'
+  color: 'blue'
+inputs:
+  integration:
+    description: "One of: 'dependency-version', 'license', 'version'"
+    required: true
+  dependency-type:
+    description: "Used by 'dependency-version' integration. One of: 'dependencies', 'dev-dependencies'. Default: 'dependencies'"
+    required: false
+  dependency:
+    description: "Required by 'dependency-version' integration. Dependency to show the version of."
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
