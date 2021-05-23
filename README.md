@@ -2,9 +2,6 @@
 
 Serverless badges from your Poetry `pyproject.toml` with Github Actions.
 
-[![Run tests](https://github.com/action-badges/poetry-badges/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/action-badges/poetry-badges/actions/workflows/test.yml)
-[![Build Dist](https://github.com/action-badges/poetry-badges/actions/workflows/build-dist.yml/badge.svg?branch=main)](https://github.com/action-badges/poetry-badges/actions/workflows/build-dist.yml)
-
 ```yaml
 name: Make Poetry Badges
 on:
