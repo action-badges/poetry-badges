@@ -21,21 +21,21 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Make version Badge
-        uses: action-badges/poetry-badges@master
+        uses: action-badges/poetry-badges@0.1.0
         with:
           file-name: poetry-version.svg
           github-token: '${{ secrets.GITHUB_TOKEN }}'
           integration: version
 
       - name: Make license badge
-        uses: action-badges/poetry-badges@master
+        uses: action-badges/poetry-badges@0.1.0
         with:
           file-name: poetry-license.svg
           github-token: '${{ secrets.GITHUB_TOKEN }}'
           integration: license
 
       - name: Make django version badge
-        uses: action-badges/poetry-badges@master
+        uses: action-badges/poetry-badges@0.1.0
         with:
           file-name: poetry-django-version.svg
           github-token: '${{ secrets.GITHUB_TOKEN }}'
