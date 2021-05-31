@@ -4,6 +4,7 @@ Serverless badges from your Poetry `pyproject.toml` with Github Actions.
 
 ![build](https://raw.githubusercontent.com/action-badges/poetry-badges/badges/.badges/main/build-status.svg)
 ![coverage](https://raw.githubusercontent.com/action-badges/poetry-badges/badges/.badges/main/coverage.svg)
+![tag](https://raw.githubusercontent.com/action-badges/poetry-badges/badges/.badges/github-tag.svg)
 ![license](https://raw.githubusercontent.com/action-badges/poetry-badges/badges/.badges/main/package-license.svg)
 ![node](https://raw.githubusercontent.com/action-badges/poetry-badges/badges/.badges/main/package-node-version.svg)
 
