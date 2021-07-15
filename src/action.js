@@ -1,5 +1,8 @@
 "use strict";
 
-const { run } = require("./lib");
+const { invoke } = require("@action-badges/core");
+const { getAction } = require("./lib");
 
-run();
+(async () => {
+  return await invoke(getAction());
+})();

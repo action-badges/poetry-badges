@@ -5,6 +5,7 @@ const {
   PoetryDependencyVersion,
   PoetryLicense,
   PoetryVersion,
+  getAction,
 } = require("./lib");
 
 describe("PoetryLicense", function () {
@@ -146,5 +147,31 @@ describe("PoetryDependencyVersion", function () {
       { label: "black", message: "==20.8b1", messageColor: "blue" },
       badge
     );
+  });
+});
+
+describe("getAction", function () {
+  afterEach(function () {
+    delete process.env["INPUT_INTEGRATION"];
+  });
+
+  it("Returns the correct action class with expected inputs", function () {
+    process.env["INPUT_INTEGRATION"] = "dependency-version";
+    assert.strictEqual(PoetryDependencyVersion, getAction());
+
+    process.env["INPUT_INTEGRATION"] = "license";
+    assert.strictEqual(PoetryLicense, getAction());
+
+    process.env["INPUT_INTEGRATION"] = "version";
+    assert.strictEqual(PoetryVersion, getAction());
+  });
+
+  it("Throws an exception with unexpected inputs", function () {
+    process.env["INPUT_INTEGRATION"] = "invalid";
+    assert.throws(() => getAction(), {
+      name: "Error",
+      message:
+        "integration must be one of (dependency-version,license,version)",
+    });
   });
 });

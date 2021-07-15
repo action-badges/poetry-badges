@@ -3,7 +3,7 @@
 const { promises: fs } = require("fs");
 const core = require("@actions/core");
 const toml = require("toml");
-const { BaseAction, invoke } = require("@action-badges/core");
+const { BaseAction } = require("@action-badges/core");
 const { addv, pep440VersionColor } = require("./formatters");
 
 class PoetryLicense extends BaseAction {
@@ -114,7 +114,12 @@ class PoetryDependencyVersion extends BaseAction {
   }
 }
 
-async function run() {
+function fail(message) {
+  core.setFailed(message);
+  throw new Error(message);
+}
+
+function getAction() {
   const integration = core.getInput("integration", { required: true });
   const validIntegrations = {
     "dependency-version": PoetryDependencyVersion,
@@ -122,16 +127,14 @@ async function run() {
     version: PoetryVersion,
   };
   if (integration in validIntegrations) {
-    return await invoke(validIntegrations[integration]);
+    return validIntegrations[integration];
   }
-  core.setFailed(
-    `integration must be one of (${Object.keys(validIntegrations)})`
-  );
+  fail(`integration must be one of (${Object.keys(validIntegrations)})`);
 }
 
 module.exports = {
   PoetryDependencyVersion,
   PoetryLicense,
   PoetryVersion,
-  run,
+  getAction,
 };
