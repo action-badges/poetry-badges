@@ -108,7 +108,7 @@ class PoetryDependencyVersion extends BaseAction {
     const message = version.version ? version.version : version;
     return {
       label: dependency.toLowerCase(),
-      message,
+      message: message.replace(/\s/g, ""),
       messageColor: "blue",
     };
   }

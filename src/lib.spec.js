@@ -148,6 +148,20 @@ describe("PoetryDependencyVersion", function () {
       badge
     );
   });
+
+  it("strips whitespace from ranges", async function () {
+    process.env["INPUT_DEPENDENCY"] = "Django";
+    process.env["INPUT_DEPENDENCY-TYPE"] = "dependencies";
+    const stub = new PoetryDependencyVersion();
+    stub.fetch = () => ({
+      tool: { poetry: { dependencies: { Django: ">= 1.11, <4.0" } } },
+    });
+    const badge = await stub.render();
+    assert.deepStrictEqual(
+      { label: "django", message: ">=1.11,<4.0", messageColor: "blue" },
+      badge
+    );
+  });
 });
 
 describe("getAction", function () {
