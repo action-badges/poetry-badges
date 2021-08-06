@@ -26,7 +26,7 @@ describe("PoetryLicense", function () {
     const stub = new PoetryLicense();
     stub.fetch = () => ({ tool: { poetry: { license: "MIT" } } });
     const badge = await stub.render();
-    assert.deepStrictEqual({ message: "MIT", messageColor: "blue" }, badge);
+    assert.deepStrictEqual(badge, { message: "MIT", messageColor: "blue" });
   });
 });
 
@@ -48,17 +48,17 @@ describe("PoetryVersion", function () {
     const stub = new PoetryVersion();
     stub.fetch = () => ({ tool: { poetry: { version: "1.0.1" } } });
     const badge = await stub.render();
-    assert.deepStrictEqual({ message: "v1.0.1", messageColor: "blue" }, badge);
+    assert.deepStrictEqual(badge, { message: "v1.0.1", messageColor: "blue" });
   });
 
   it("renders if file is valid (pre release)", async function () {
     const stub = new PoetryVersion();
     stub.fetch = () => ({ tool: { poetry: { version: "0.2.3" } } });
     const badge = await stub.render();
-    assert.deepStrictEqual(
-      { message: "v0.2.3", messageColor: "orange" },
-      badge
-    );
+    assert.deepStrictEqual(badge, {
+      message: "v0.2.3",
+      messageColor: "orange",
+    });
   });
 });
 
@@ -95,10 +95,11 @@ describe("PoetryDependencyVersion", function () {
       tool: { poetry: { dependencies: { python: "^3.6" } } },
     });
     const badge = await stub.render();
-    assert.deepStrictEqual(
-      { label: "python", message: "^3.6", messageColor: "blue" },
-      badge
-    );
+    assert.deepStrictEqual(badge, {
+      label: "python",
+      message: "^3.6",
+      messageColor: "blue",
+    });
   });
 
   it("renders if file is valid (dependencies, explicit)", async function () {
@@ -109,10 +110,11 @@ describe("PoetryDependencyVersion", function () {
       tool: { poetry: { dependencies: { Django: ">=1.11,<4.0" } } },
     });
     const badge = await stub.render();
-    assert.deepStrictEqual(
-      { label: "django", message: ">=1.11,<4.0", messageColor: "blue" },
-      badge
-    );
+    assert.deepStrictEqual(badge, {
+      label: "django",
+      message: ">=1.11,<4.0",
+      messageColor: "blue",
+    });
   });
 
   it("renders if file is valid (dev-dependencies)", async function () {
@@ -123,10 +125,11 @@ describe("PoetryDependencyVersion", function () {
       tool: { poetry: { "dev-dependencies": { isort: "5.8" } } },
     });
     const badge = await stub.render();
-    assert.deepStrictEqual(
-      { label: "isort", message: "5.8", messageColor: "blue" },
-      badge
-    );
+    assert.deepStrictEqual(badge, {
+      label: "isort",
+      message: "5.8",
+      messageColor: "blue",
+    });
   });
 
   it("renders if file is valid (version is object)", async function () {
@@ -143,10 +146,11 @@ describe("PoetryDependencyVersion", function () {
       },
     });
     const badge = await stub.render();
-    assert.deepStrictEqual(
-      { label: "black", message: "==20.8b1", messageColor: "blue" },
-      badge
-    );
+    assert.deepStrictEqual(badge, {
+      label: "black",
+      message: "==20.8b1",
+      messageColor: "blue",
+    });
   });
 
   it("strips whitespace from ranges", async function () {
@@ -157,10 +161,11 @@ describe("PoetryDependencyVersion", function () {
       tool: { poetry: { dependencies: { Django: ">= 1.11, <4.0" } } },
     });
     const badge = await stub.render();
-    assert.deepStrictEqual(
-      { label: "django", message: ">=1.11,<4.0", messageColor: "blue" },
-      badge
-    );
+    assert.deepStrictEqual(badge, {
+      label: "django",
+      message: ">=1.11,<4.0",
+      messageColor: "blue",
+    });
   });
 });
 
@@ -171,13 +176,13 @@ describe("getAction", function () {
 
   it("Returns the correct action class with expected inputs", function () {
     process.env["INPUT_INTEGRATION"] = "dependency-version";
-    assert.strictEqual(PoetryDependencyVersion, getAction());
+    assert.strictEqual(getAction(), PoetryDependencyVersion);
 
     process.env["INPUT_INTEGRATION"] = "license";
-    assert.strictEqual(PoetryLicense, getAction());
+    assert.strictEqual(getAction(), PoetryLicense);
 
     process.env["INPUT_INTEGRATION"] = "version";
-    assert.strictEqual(PoetryVersion, getAction());
+    assert.strictEqual(getAction(), PoetryVersion);
   });
 
   it("Throws an exception with unexpected inputs", function () {
