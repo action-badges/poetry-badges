@@ -20,13 +20,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: action-badges/create-orphan-branch@0.1.0
+        with:
+          branch-name: badges
 
       - name: Make version Badge
         uses: action-badges/poetry-badges@0.2.2
         with:
           file-name: poetry-version.svg
+          badge-branch: badges
           github-token: '${{ secrets.GITHUB_TOKEN }}'
           integration: version
 
@@ -34,6 +37,7 @@ jobs:
         uses: action-badges/poetry-badges@0.2.2
         with:
           file-name: poetry-license.svg
+          badge-branch: badges
           github-token: '${{ secrets.GITHUB_TOKEN }}'
           integration: license
 
@@ -41,6 +45,7 @@ jobs:
         uses: action-badges/poetry-badges@0.2.2
         with:
           file-name: poetry-django-version.svg
+          badge-branch: badges
           github-token: '${{ secrets.GITHUB_TOKEN }}'
           integration: dependency-version
           dependency-type: dependencies
