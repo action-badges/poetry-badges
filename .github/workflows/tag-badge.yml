@@ -3,15 +3,4 @@ on: create
 
 jobs:
   build:
-    if: github.event.ref_type == 'tag'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Write Tag badge
-        uses: action-badges/core@main
-        with:
-          badge-branch: badges
-          file-name: github-tag.svg
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-          label: tag
-          message: "${{ github.event.ref }}"
-          message-color: blue
+    uses: action-badges/shared-workflows/.github/workflows/tag-badge.yml@main
