@@ -20,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: action-badges/create-orphan-branch@0.1.0
         with:
           branch-name: badges
