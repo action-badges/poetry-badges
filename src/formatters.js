@@ -1,6 +1,6 @@
 "use strict";
 
-const pep440 = require("@renovate/pep440");
+const pep440 = require("@renovatebot/pep440");
 
 const ignoredVersionPatterns = /^[^0-9]|[0-9]{4}-[0-9]{2}-[0-9]{2}/;
 function addv(version) {
