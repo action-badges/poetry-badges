@@ -24,7 +24,7 @@ class PoetryLicense extends BaseAction {
       return pyprojectToml;
     }
     throw new Error(
-      "pyproject.toml does not contain '.tool.poetry.license' property"
+      "pyproject.toml does not contain '.tool.poetry.license' property",
     );
   }
 
@@ -55,7 +55,7 @@ class PoetryVersion extends BaseAction {
       return pyprojectToml;
     }
     throw new Error(
-      "pyproject.toml does not contain '.tool.poetry.version' property"
+      "pyproject.toml does not contain '.tool.poetry.version' property",
     );
   }
 
@@ -93,7 +93,7 @@ class PoetryDependencyVersion extends BaseAction {
       return pyprojectToml;
     }
     throw new Error(
-      `pyproject.toml does not contain '.tool.poetry.${dependencyType}.${dependency}' property`
+      `pyproject.toml does not contain '.tool.poetry.${dependencyType}.${dependency}' property`,
     );
   }
 
@@ -102,7 +102,7 @@ class PoetryDependencyVersion extends BaseAction {
     const pyprojectToml = await this.validate(
       await this.fetch(),
       dependencyType,
-      dependency
+      dependency,
     );
     const version = pyprojectToml.tool.poetry[dependencyType][dependency];
     const message = version.version ? version.version : version;
