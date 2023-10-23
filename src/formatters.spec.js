@@ -41,7 +41,7 @@ describe("pep440VersionColor", function () {
       assert.strictEqual(
         pep440VersionColor(testCase[0]),
         testCase[1],
-        testCase[0] //message
+        testCase[0], //message
       );
     }
   });
