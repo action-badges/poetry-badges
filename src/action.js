@@ -1,8 +1,4 @@
-"use strict";
+import { invoke } from "@action-badges/core";
+import { getAction } from "./lib.js";
 
-const { invoke } = require("@action-badges/core");
-const { getAction } = require("./lib");
-
-(async () => {
-  return await invoke(getAction());
-})();
+await invoke(getAction());

@@ -1,7 +1,5 @@
-"use strict";
-
-const assert = require("assert");
-const { pep440VersionColor } = require("./formatters");
+import assert from "assert";
+import { pep440VersionColor } from "./formatters.js";
 
 describe("pep440VersionColor", function () {
   it("generates correct colors for versions", function () {

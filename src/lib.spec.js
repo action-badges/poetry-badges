@@ -1,12 +1,10 @@
-"use strict";
-
-const assert = require("assert");
-const {
+import assert from "assert";
+import {
   PoetryDependencyVersion,
   PoetryLicense,
   PoetryVersion,
   getAction,
-} = require("./lib");
+} from "./lib.js";
 
 describe("PoetryLicense", function () {
   it("throws if license is missing", async function () {

@@ -1,6 +1,4 @@
-"use strict";
-
-const pep440 = require("@renovatebot/pep440");
+import pep440 from "@renovatebot/pep440";
 
 const ignoredVersionPatterns = /^[^0-9]|[0-9]{4}-[0-9]{2}-[0-9]{2}/;
 function addv(version) {
@@ -23,4 +21,4 @@ function pep440VersionColor(version) {
   return "blue";
 }
 
-module.exports = { addv, pep440VersionColor };
+export { addv, pep440VersionColor };

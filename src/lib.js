@@ -1,10 +1,8 @@
-"use strict";
-
-const { promises: fs } = require("fs");
-const core = require("@actions/core");
-const toml = require("toml");
-const { BaseAction } = require("@action-badges/core");
-const { addv, pep440VersionColor } = require("./formatters");
+import { promises as fs } from "fs";
+import core from "@actions/core";
+import toml from "toml";
+import { BaseAction } from "@action-badges/core";
+import { addv, pep440VersionColor } from "./formatters.js";
 
 class PoetryLicense extends BaseAction {
   get label() {
@@ -132,9 +130,4 @@ function getAction() {
   fail(`integration must be one of (${Object.keys(validIntegrations)})`);
 }
 
-module.exports = {
-  PoetryDependencyVersion,
-  PoetryLicense,
-  PoetryVersion,
-  getAction,
-};
+export { PoetryDependencyVersion, PoetryLicense, PoetryVersion, getAction };
