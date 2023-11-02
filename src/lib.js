@@ -1,6 +1,6 @@
 import { promises as fs } from "fs";
 import core from "@actions/core";
-import toml from "toml";
+import { parse } from "smol-toml";
 import { BaseAction } from "@action-badges/core";
 import { addv, pep440VersionColor } from "./formatters.js";
 
@@ -10,7 +10,7 @@ class PoetryLicense extends BaseAction {
   }
 
   async fetch() {
-    return toml.parse(await fs.readFile("./pyproject.toml", "utf8"));
+    return parse(await fs.readFile("./pyproject.toml", "utf8"));
   }
 
   async validate(pyprojectToml) {
@@ -41,7 +41,7 @@ class PoetryVersion extends BaseAction {
   }
 
   async fetch() {
-    return toml.parse(await fs.readFile("./pyproject.toml", "utf8"));
+    return parse(await fs.readFile("./pyproject.toml", "utf8"));
   }
 
   async validate(pyprojectToml) {
@@ -78,7 +78,7 @@ class PoetryDependencyVersion extends BaseAction {
   }
 
   async fetch() {
-    return toml.parse(await fs.readFile("./pyproject.toml", "utf8"));
+    return parse(await fs.readFile("./pyproject.toml", "utf8"));
   }
 
   async validate(pyprojectToml, dependencyType, dependency) {
