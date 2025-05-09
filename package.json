@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "build": "ncc build src/action.js -o dist --minify",
-    "lint": "eslint \"**/*.{js,cjs}\"",
-    "prettier": "prettier --write \"**/*.{js,cjs}\"",
-    "prettier:check": "prettier --check \"**/*.{js,cjs}\"",
+    "lint": "eslint \"**/*.{js,mjs}\"",
+    "prettier": "prettier --write \"**/*.{js,mjs}\"",
+    "prettier:check": "prettier --check \"**/*.{js,mjs}\"",
     "test": "c8 --reporter=text mocha \"src/**/*.spec.js\"",
     "coverage": "c8 report --reporter=cobertura"
   },
@@ -29,7 +29,7 @@
     "c8": "^10.1.3",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-mocha": "^10.5.0",
+    "eslint-plugin-mocha": "^11.0.0",
     "eslint-plugin-prettier": "^5.4.0",
     "mocha": "^11.2.2",
     "prettier": "^3.5.3"
