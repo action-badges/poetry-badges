@@ -19,9 +19,9 @@
   "author": "chris48s",
   "license": "MIT",
   "dependencies": {
-    "@action-badges/core": "^0.3.1",
+    "@action-badges/core": "^0.4.0",
     "@actions/core": "^1.11.1",
-    "@renovatebot/pep440": "^4.1.0",
+    "@renovatebot/pep440": "^4.2.1",
     "smol-toml": "^1.4.1"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "prettier": "^3.6.2"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">=24"
   },
   "type": "module"
 }
