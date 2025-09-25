@@ -26,7 +26,7 @@ jobs:
           branch-name: badges
 
       - name: Make version Badge
-        uses: action-badges/poetry-badges@0.3.1
+        uses: action-badges/poetry-badges@0.4.0
         with:
           file-name: poetry-version.svg
           badge-branch: badges
@@ -34,7 +34,7 @@ jobs:
           integration: version
 
       - name: Make license badge
-        uses: action-badges/poetry-badges@0.3.1
+        uses: action-badges/poetry-badges@0.4.0
         with:
           file-name: poetry-license.svg
           badge-branch: badges
@@ -42,7 +42,7 @@ jobs:
           integration: license
 
       - name: Make django version badge
-        uses: action-badges/poetry-badges@0.3.1
+        uses: action-badges/poetry-badges@0.4.0
         with:
           file-name: poetry-django-version.svg
           badge-branch: badges
