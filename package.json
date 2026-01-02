@@ -32,7 +32,7 @@
     "eslint-plugin-mocha": "^11.2.0",
     "eslint-plugin-prettier": "^5.5.4",
     "mocha": "^11.7.5",
-    "prettier": "^3.7.3"
+    "prettier": "^3.7.4"
   },
   "engines": {
     "node": ">=24"
