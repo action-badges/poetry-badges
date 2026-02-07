@@ -1,5 +1,5 @@
 import { promises as fs } from "fs";
-import core from "@actions/core";
+import * as core from "@actions/core";
 import { parse } from "smol-toml";
 import { BaseAction } from "@action-badges/core";
 import { addv, pep440VersionColor } from "./formatters.js";
