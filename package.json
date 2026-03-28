@@ -8,8 +8,8 @@
     "lint": "eslint \"**/*.{js,mjs}\"",
     "prettier": "prettier --write \"**/*.{js,mjs}\"",
     "prettier:check": "prettier --check \"**/*.{js,mjs}\"",
-    "test": "c8 --reporter=text mocha \"src/**/*.spec.js\"",
-    "coverage": "c8 report --reporter=cobertura"
+    "test": "node --test --experimental-test-coverage",
+    "coverage": "./coverage.sh"
   },
   "repository": {
     "type": "git",
@@ -27,13 +27,12 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@vercel/ncc": "^0.38.4",
-    "c8": "^11.0.0",
+    "cobertura": "^1.0.3",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-mocha": "^11.2.0",
+    "eslint-plugin-node-core-test": "^0.2.1",
     "eslint-plugin-prettier": "^5.5.5",
     "globals": "^17.4.0",
-    "mocha": "^11.7.5",
     "prettier": "^3.8.1"
   },
   "engines": {
