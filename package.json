@@ -22,7 +22,7 @@
     "@action-badges/core": "^0.4.0",
     "@actions/core": "^3.0.0",
     "@renovatebot/pep440": "^4.2.2",
-    "smol-toml": "^1.6.0"
+    "smol-toml": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
