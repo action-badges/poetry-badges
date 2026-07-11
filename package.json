@@ -19,7 +19,7 @@
   "author": "chris48s",
   "license": "MIT",
   "dependencies": {
-    "@action-badges/core": "^0.4.1",
+    "@action-badges/core": "^0.5.0",
     "@actions/core": "^3.0.1",
     "@renovatebot/pep440": "^5.0.0",
     "smol-toml": "^1.7.0"
